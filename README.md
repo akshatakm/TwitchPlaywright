@@ -1,44 +1,96 @@
 🎮 TwitchPlaywright
-Automated Playwright Java tests targeting Twitch.tv. This project emulates mobile browsers (e.g. iPhone 12), performs game searches (e.g. StarCraft II), scrolls through results, clicks streams or videos, and validates navigation. Useful for end-to-end mobile UI testing of Twitch flows.
+Playwright automation tests for Twitch.tv UI using Java, targeting real-world workflows like game search, scrolling, clicking visible elements, and stream validation — all in a mobile (iPhone 12) emulated environment.
 
+📌 Features
+✅ Mobile browser emulation (iPhone 12)
 
+🔍 Search automation for games like "StarCraft II"
 
-🚀 Features
-Mobile device emulation using Playwright’s built‑in device descriptors
+🖱️ Scroll + click on first visible stream element
 
-Search automation, scroll-based element detection, and click-with-viewport awareness
+🧪 Validate page load via reliable selectors
 
-Reliable navigation handling via selector-based synchronization (e.g. stream title or player loaded)
+🎥 Video recording & screenshot capture
 
-Optional video recording, screenshots, and test reporting
+🧰 Extensible Java framework (Playwright + Maven or Gradle)
 
-Test runner integration with JUnit/TestNG (if used)
+🚀 Getting Started
+1. Clone the repo
+bash
+Copy
+Edit
+git clone https://github.com/akshatakm/TwitchPlaywright.git
+cd TwitchPlaywright
+2. Install Dependencies
+Install Playwright for Java:
 
-Ready for CI/CD (e.g. GitHub Actions)
+bash
+Copy
+Edit
+mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install"
+3. Run a Test
+bash
+Copy
+Edit
+mvn test
+🧪 Example Use Case
+Automated test that:
 
+Opens twitch.tv in mobile mode
 
+Searches for StarCraft II
+
+Scrolls the page
+
+Clicks the first visible stream
+
+Waits for stream title to appear
+
+Validates the navigation
+
+🎞 Video Recording
+To record test runs, browser contexts are configured to save .webm files:
+
+java
+Copy
+Edit
+BrowserContext context = browser.newContext(new Browser.NewContextOptions()
+  .setRecordVideoDir(Paths.get("videos"))
+  .setRecordVideoSize(1280, 720));
+After the test:
+
+java
+Copy
+Edit
+Path videoPath = page.video().path();
+System.out.println("Video saved at: " + videoPath.toAbsolutePath());
 📁 Project Structure
 bash
 Copy
 Edit
 TwitchPlaywright/
-├── src/
-│   └── main/java/…               # Java utility/helper classes
-│   └── test/java/…               # Playwright test cases
-├── videos/                       # Recorded test videos
-├── screenshots/                  # Test-run screenshots
-├── pom.xml or build.gradle       # Project build config
-├── README.md                     # This file
-└── .github/
-    └── workflows/                # CI pipeline definitions
+├── src/test/java/           # Playwright UI tests
+├── videos/                  # Recorded videos from test runs
+├── screenshots/             # Captured screenshots
+├── pom.xml                  # Maven build file
+├── README.md                # This file
+⚙️ Tech Stack
+Playwright Java
+
+Java 11+
+
+Maven
+
+(Optionally) GitHub Actions for CI
+
+💡 Future Enhancements
+CI pipeline with video artifact upload
+
+Parameterized test support for multiple search terms
+
+More validations (e.g., viewer count, stream metadata)
+
+Playwright Test Report integration
 
 
-⚙️ Prerequisites
-Java JDK 11+
-
-Maven or Gradle (depending on project setup)
-
-Playwright Java dependency
-
-Playwright binaries installed via CLI (playwright install)
-
+Test run Gif:
