@@ -94,4 +94,4 @@ Playwright Test Report integration
 
 
 Test run Gif:
-https://github.com/akshatakm/TwitchPlaywright/blob/main/videos/f76c3a09c349fcf05878ec6b6c236792.webm
+(https://github.com/akshatakm/TwitchPlaywright/blob/main/videos/7a9846b783328f137b1f506ae1dddec7.gif#:~:text=videos-,7a9846b783328f137b1f506ae1dddec7,-.gif)
