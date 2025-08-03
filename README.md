@@ -68,5 +68,6 @@ TwitchPlaywright/
 - `PlaywrightFactory.java`: Playwright browser and context management
 - `HomePage.java`: Page Object for Twitch home page interactions
 
-GIF file for local run: https://github.com/akshatakm/TwitchPlaywright/blob/main/videos/7a9846b783328f137b1f506ae1dddec7.gif#:~:text=videos-,7a9846b783328f137b1f506ae1dddec7,-.gif
+GIF file for local run: 
+![alt text](https://github.com/akshatakm/TwitchPlaywright/blob/main/videos/7a9846b783328f137b1f506ae1dddec7.gif#:~:text=videos-,7a9846b783328f137b1f506ae1dddec7,-.gif)
 
