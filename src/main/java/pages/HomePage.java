@@ -1,7 +1,10 @@
 package pages;
 
+import Helpers.PlaywrightFactory;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+
+import java.nio.file.Paths;
 
 public class HomePage {
 
@@ -36,13 +39,13 @@ public class HomePage {
             if(videoLinkArray.nth(i).isVisible()){
                 videoLinkArray.nth(i).click();
                 page.waitForTimeout(5000);
-                //page.waitForSelector("div[data-a-target=player-overlay-click-handler]");
                 if(page.getByText("Share this video").isVisible() || page.getByText("Follow").isVisible()){
                     videoPageLand = true;
                 }
                 break;
             }
         }
+        PlaywrightFactory.takeScreenshot();
         return videoPageLand;
     }
 }
